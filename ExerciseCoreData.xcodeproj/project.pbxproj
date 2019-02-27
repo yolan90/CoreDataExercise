@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2BCEF4221E3787005B5067 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BCEF3221E3787005B5067 /* PersonCell.swift */; };
 		5C4DF417221DA1C800D1DA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF416221DA1C700D1DA86 /* AppDelegate.swift */; };
-		5C4DF419221DA1C800D1DA86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF418221DA1C800D1DA86 /* ViewController.swift */; };
 		5C4DF41C221DA1C800D1DA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF41A221DA1C800D1DA86 /* Main.storyboard */; };
 		5C4DF41F221DA1C800D1DA86 /* ExerciseCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF41D221DA1C800D1DA86 /* ExerciseCoreData.xcdatamodeld */; };
 		5C4DF421221DA1C800D1DA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF420221DA1C800D1DA86 /* Assets.xcassets */; };
 		5C4DF424221DA1C800D1DA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF422221DA1C800D1DA86 /* LaunchScreen.storyboard */; };
 		5C4DF42F221DA1C800D1DA86 /* ExerciseCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF42E221DA1C800D1DA86 /* ExerciseCoreDataTests.swift */; };
 		5C4DF43A221DA1C800D1DA86 /* ExerciseCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF439221DA1C800D1DA86 /* ExerciseCoreDataUITests.swift */; };
+		5C4DF448221DA3FF00D1DA86 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF447221DA3FF00D1DA86 /* HomeTableViewController.swift */; };
+		5C4DF44A221DA41E00D1DA86 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF449221DA41E00D1DA86 /* AddPersonViewController.swift */; };
+		5CBFA685222633D100688FA6 /* UpdateDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFA684222633D100688FA6 /* UpdateDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C2BCEF3221E3787005B5067 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		5C4DF413221DA1C700D1DA86 /* ExerciseCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExerciseCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4DF416221DA1C700D1DA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C4DF418221DA1C800D1DA86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C4DF41B221DA1C800D1DA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C4DF41E221DA1C800D1DA86 /* ExerciseCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExerciseCoreData.xcdatamodel; sourceTree = "<group>"; };
 		5C4DF420221DA1C800D1DA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		5C4DF435221DA1C800D1DA86 /* ExerciseCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExerciseCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4DF439221DA1C800D1DA86 /* ExerciseCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCoreDataUITests.swift; sourceTree = "<group>"; };
 		5C4DF43B221DA1C800D1DA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4DF447221DA3FF00D1DA86 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		5C4DF449221DA41E00D1DA86 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		5CBFA684222633D100688FA6 /* UpdateDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,10 @@
 		5C4DF40A221DA1C700D1DA86 = {
 			isa = PBXGroup;
 			children = (
+				5CBFA684222633D100688FA6 /* UpdateDataViewController.swift */,
+				5C2BCEF3221E3787005B5067 /* PersonCell.swift */,
+				5C4DF449221DA41E00D1DA86 /* AddPersonViewController.swift */,
+				5C4DF447221DA3FF00D1DA86 /* HomeTableViewController.swift */,
 				5C4DF415221DA1C700D1DA86 /* ExerciseCoreData */,
 				5C4DF42D221DA1C800D1DA86 /* ExerciseCoreDataTests */,
 				5C4DF438221DA1C800D1DA86 /* ExerciseCoreDataUITests */,
@@ -100,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				5C4DF416221DA1C700D1DA86 /* AppDelegate.swift */,
-				5C4DF418221DA1C800D1DA86 /* ViewController.swift */,
 				5C4DF41A221DA1C800D1DA86 /* Main.storyboard */,
 				5C4DF420221DA1C800D1DA86 /* Assets.xcassets */,
 				5C4DF422221DA1C800D1DA86 /* LaunchScreen.storyboard */,
@@ -259,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4DF448221DA3FF00D1DA86 /* HomeTableViewController.swift in Sources */,
+				5C2BCEF4221E3787005B5067 /* PersonCell.swift in Sources */,
 				5C4DF41F221DA1C800D1DA86 /* ExerciseCoreData.xcdatamodeld in Sources */,
-				5C4DF419221DA1C800D1DA86 /* ViewController.swift in Sources */,
+				5CBFA685222633D100688FA6 /* UpdateDataViewController.swift in Sources */,
 				5C4DF417221DA1C800D1DA86 /* AppDelegate.swift in Sources */,
+				5C4DF44A221DA41E00D1DA86 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,41 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeTableViewController: UITableViewController {
 
+    @IBOutlet weak var homeTableView: UITableView!
+    private var personArr: [NSManagedObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        personArr = fetchData()
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return fetchData().count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonCell {
+            let person : NSManagedObject =  personArr[indexPath.row]
+            let image = UIImage(data: (person.value(forKey: "photo") as! Data?)!)
+            image?.draw(in: cell.photoView.bounds)
+            cell.photoView.image = image
+            cell.nameLabel.text = person.value(forKey: "name") as? String
 
-        // Configure the cell...
-
-        return cell
+            return cell
+        }
+        return UITableViewCell()
     }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -77,14 +80,38 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func fetchData() -> [NSManagedObject] {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+        let managedContact = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+            do {
+                let result = try managedContact.fetch(fetchRequest)
+    //            for data in result as! [NSManagedObject] {
+    //                print(data.value(forKey: "name") as! String)
+    //            }
+                return result as! [NSManagedObject]
+            } catch let error as NSError {
+                print("Error while fetch data \(error) \(error.userInfo)")
+            }
+        }
+        return []
     }
-    */
-
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UpdateDataViewController {
+            let selectedIndex = homeTableView.indexPathForSelectedRow!
+            destination.loadedPerson = personArr[selectedIndex.row]
+        }
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadSections(IndexSet(0..<homeTableView.numberOfSections), with: UITableView.RowAnimation.automatic)
+    }
+    
 }
